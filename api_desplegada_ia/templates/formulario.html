@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción con Flask</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: #00ffcc;
+            animation: gradient-animation 15s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            font-size: 2.8em;
+            text-shadow: 0px 0px 10px #00ffcc, 0px 0px 20px #00b3a4;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ffcc;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0px 10px 20px rgba(0, 255, 204, 0.5);
+        }
+
+        label {
+            font-size: 1.1em;
+            display: block;
+            margin: 15px 0 5px;
+            color: #00e6b8;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            background: #1a1a1a;
+            color: #00ffcc;
+            box-shadow: 0px 0px 8px #00b3a4 inset;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            background: #00ffcc;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        input[type="submit"]:hover {
+            background: #00b3a4;
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 255, 204, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #00ffcc;
+            font-size: 0.9em;
+            border-top: 2px solid #00b3a4;
+        }
+
+        footer p {
+            margin: 0;
+            text-shadow: 0px 0px 5px #00ffcc;
+        }
+
+        /* Animación sutil en el botón de envío */
+        input[type="submit"]:active {
+            transform: scale(0.95);
+            background: #006d5b;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>🌐 Predicción del Titanic</h1>
+    <form action="/predict" method="post">
+      <label for="pclass">Clase del billete (1, 2, 3):</label>
+      <input type="number" id="pclass" name="pclass" placeholder="Ejemplo: 1" required>
+
+      <label for="sex">Sexo (0 = hombre, 1 = mujer):</label>
+      <input type="number" id="sex" name="sex" placeholder="Ejemplo: 0 o 1" required>
+
+      <label for="age">Edad (en años):</label>
+      <input type="number" id="age" name="age" placeholder="Ejemplo: 29" required>
+
+      <!-- Puedes añadir más campos según las características del modelo -->
+      <input type="submit" value="🚀 Predecir">
+    </form>
+    <footer>
+        <p>&copy; 2025 | Interfaz de predicción - Tecnología AI</p>
+    </footer>
+  </body>
+</html>
